@@ -1,0 +1,28 @@
+#!/bin/bash
+
+nasm -v &> /dev/null
+if [[ $? != 0 ]]
+then
+	echo -e "\033[31merror\033[0m : the package \"nasm\" is not found"
+	echo "please install \"nasm\" "
+	exit 1
+fi
+
+gcc -v &> /dev/null
+if [[ $? != 0 ]]
+then
+	echo -e "\033[31merror\033[0m : the package \"gcc\" is not found"
+	echo "please install \"gcc\""
+	exit 1
+fi
+
+make -v &> /dev/null
+if [[ $? != 0 ]]
+then
+	echo -e "\033[31merror\033[0m : the package \"make\" is not found"
+	echo "please install \"make\""
+	exit 1
+fi
+
+echo "configure is ok"
+echo -e "please run the command : \033[32mmake\033[0m"
